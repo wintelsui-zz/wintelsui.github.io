@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>icon</key>
+		<string>http://wintelsui.github.io/pages/projects/upload/kuaizanIcon.png</string>
+		<key>ituns_url</key>
+		<string>https://itunes.apple.com/us/app/快赞-notes/id1212355459?l=zh&amp;amp;ls=1&amp;amp;mt=8</string>
+		<key>name</key>
+		<string>快赞</string>
+		<key>url</key>
+		<string>http://wintelsui.github.io/pages/WTGLilysFriends</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>https://wintelsui.github.io/pages/projects/upload/kuaixiaoshuiyinIcon.jpg</string>
+		<key>ituns_url</key>
+		<string>https://itunes.apple.com/cn/app/快消水印/id1221819804?l=zh&amp;amp;ls=1&amp;amp;mt=8</string>
+		<key>name</key>
+		<string>快消水印</string>
+		<key>url</key>
+		<string>https://wintelsui.github.io/pages/WTLilysWMRemover</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>https://wintelsui.github.io/pages/projects/upload/leanJapan50_120.png</string>
+		<key>ituns_url</key>
+		<string>https://itunes.apple.com/us/app/五十音圖lite/id1436056556?l=zh&amp;ls=1&amp;mt=8</string>
+		<key>name</key>
+		<string>五十音图 Lite</string>
+		<key>url</key>
+		<string>https://wintelsui.github.io/pages/WTJapaneseLearn</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>https://wintelsui.github.io/pages/projects/upload/leanJapan50_120.png</string>
+		<key>ituns_url</key>
+		<string>https://itunes.apple.com/us/app/五十音圖pro/id1372554304?l=zh&amp;ls=1&amp;mt=8</string>
+		<key>name</key>
+		<string>五十音图 Pro</string>
+		<key>url</key>
+		<string>https://wintelsui.github.io/pages/WTJapaneseLearn</string>
+	</dict>
+</array>
+</plist>
