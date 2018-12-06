@@ -302,10 +302,173 @@ __block不管是ARC还是MRC模式下都可以使用，可以修饰对象，也�
 __weak只能在ARC模式下使用，也只能修饰对象（NSString），不能修饰基本数据类型（int）。 __block对象可以在block中被重新赋值，__weak不可以。 
 
 -------
-##❏ 多线程 
+##❏ isa 元类 
+在Objective-C中，任何类的定义都是对象。任何类与实例都有isa指针，指向类的元类（meteClass），元类中保存了类的类方法列表；
+对象的isa指针指向所属的类，类的isa指针指向了所属的元类，元类的isa指向了根元类，根元类指向了自身。
+获取 isa 指针指向使用 Class object_getClass(id obj)
+![isa](media/15438072291309/isa.png)
 
+
+##❏ 多线程 
+#####1：NSThread：简单的面向对象的线程管理类
+常用方法
+```
+- (void)testThread{
+//创建线程-selector
+NSThread *threadA = [[NSThread alloc] initWithTarget:self selector:@selector(runThreadA) object:nil];
+[threadA setName:@"threadA"];
+//线程启动
+[threadA start];
+// [threadA cancel];//线程取消
+
+//创建线程-block
+NSThread *threadB = [[NSThread alloc] initWithBlock:^{
+NSLog(@"runThreadB run:%@", [NSThread currentThread]);
+}];
+[threadB start];
+
+//创建线程并执行线程-selector
+[NSThread detachNewThreadSelector:@selector(runThreadA) toTarget:self withObject:nil];
+[NSThread detachNewThreadWithBlock:^{
+NSLog(@"runThreadD run:%@", [NSThread currentThread]);
+}]；
+
+//隐式创建线程并执行线程-selector
+[self performSelectorInBackground:@selector(runThreadA) withObject:nil];
+}
+
+- (void)runThreadA{
+NSLog(@"runThreadA run:%@", [NSThread currentThread]);
+//暂停当前线程几秒
+[NSThread sleepForTimeInterval:2];
+// [NSThread sleepUntilDate:(nonnull NSDate *)];
+
+//线程结束后在主线程调用方法 runThreadAEnd()
+[self performSelectorOnMainThread:@selector(runThreadAEnd) withObject:nil waitUntilDone:YES];
+}
+
+- (void)runThreadAEnd{
+NSLog(@"runThreadAEnd run:%@", [NSThread currentThread]);
+}
+```
+
+#####2:NSOperation与NSOperationQueue,面向对象，可以继承重写满足不同需求
+```
+//创建 NSOperation -selector
+NSInvocationOperation *opis = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(runThreadA) object:nil];
+//设置线程优先级
+opis.queuePriority = NSOperationQueuePriorityVeryHigh;
+//[opis start];//NSInvocationOperation单独使用时不会l开启新线程,将会在当前线程执行
+
+//创建 NSOperation -block
+NSBlockOperation *opbs = [NSBlockOperation blockOperationWithBlock:^{
+NSLog(@"runThread Block run:%@", [NSThread currentThread]);
+// 回到主线程
+[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+NSLog(@"runThread Block->Main run:%@", [NSThread currentThread]);
+}];
+}];
+//[opbs start];//NSBlockOperation单独使用时不会l开启新线程,将会在当前线程执行
+
+// 获取主线程队列
+//NSOperationQueue *queue = [NSOperationQueue mainQueue];
+// 创建队列
+NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+
+// 设置最大并发操作数,默认值-1,无限制并发;
+[queue setMaxConcurrentOperationCount:2];
+
+// 设置依赖
+[opbs addDependency:opis];
+
+//添加线程
+[queue addOperation:opis];
+[queue addOperation:opbs];
+[queue addOperationWithBlock:^{
+NSLog(@"runThread addBlock run:%@", [NSThread currentThread]);
+}];
+
+// 阻塞当前线程,等待队列中所有线程执行完后在继续执行,千万不能在主线程使用
+// [queue waitUntilAllOperationsAreFinished];
+// NSLog(@"因为waitUntilAllOperationsAreFinished而等待了一会儿");
+
+
+// 取消单个操作
+// [opbs cancel];
+
+
+//取消所有队列
+// [queue cancelAllOperations];
+```
+
+#####3：GCD
+```
+// 创建串行队列
+dispatch_queue_t queueSerial = dispatch_queue_create("com.sfs.queue", DISPATCH_QUEUE_SERIAL);
+// 创建并行队列
+dispatch_queue_t queueConcurrent = dispatch_queue_create("com.sfs.queue", DISPATCH_QUEUE_CONCURRENT);
+// 获取主队列
+dispatch_queue_t queueMain = dispatch_get_main_queue();
+// 获取全局并发队列
+dispatch_queue_t queueGlobal = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+
+dispatch_sync(queueSerial, ^{
+sleep(2);
+NSLog(@"run queueSerial end");
+});//
+dispatch_async(queueConcurrent, ^{
+sleep(1);
+NSLog(@"run queueConcurrent end");
+});
+dispatch_async(queueGlobal, ^{
+sleep(0.5);
+NSLog(@"run queueGlobal end");
+dispatch_async(queueMain, ^{
+NSLog(@"run queueMain end");
+});
+});
+```
+
+同步执行 + 串行队列
+异步执行 + 串行队列
+同步执行 + 并发队列
+异步执行 + 并发队列
+
+group
+```
+dispatch_group_t groupTestBlock = dispatch_group_create();
+dispatch_group_async(groupTestBlock, queueConcurrent, ^{
+NSLog(@"run groupTestBlock queueConcurrent end");
+});
+dispatch_group_async(groupTestBlock, queueGlobal, ^{
+NSLog(@"run groupTestBlock queueGlobal end");
+});
+dispatch_group_notify(groupTestBlock, queueMain, ^{
+NSLog(@"run groupTestBlock queueMain end");
+});
+// 等待Group内任务全部完成后，才继续执行（会阻塞当前线程）
+// dispatch_group_wait(groupTestBlock, DISPATCH_TIME_FOREVER);
+```
+
+```
+dispatch_group_t groupTestSpecial = dispatch_group_create();
+dispatch_group_enter(groupTestSpecial);
+[NSThread detachNewThreadWithBlock:^{
+sleep(2);
+NSLog(@"run groupTestSpecial threadA end");
+dispatch_group_leave(groupTestSpecial);
+}];
+dispatch_group_enter(groupTestSpecial);
+[NSThread detachNewThreadWithBlock:^{
+sleep(1);
+NSLog(@"run groupTestSpecial threadB end");
+dispatch_group_leave(groupTestSpecial);
+}];
+dispatch_group_notify(groupTestSpecial, queueMain, ^{
+NSLog(@"run groupTestSpecial queueMain end");
+}); 
+```
 -------
 ##❏ runtime 
 
 -------
-##❏ NSObject isa 元类 
