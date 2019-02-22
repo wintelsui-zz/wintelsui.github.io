@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>《About》的评论</title>
+	<atom:link href="https://blog.ibireme.com/about/feed/" rel="self" type="application/rss+xml" />
+	<link>https://blog.ibireme.com</link>
+	<description>一只魔法师的工坊</description>
+	<lastBuildDate>Mon, 11 Feb 2019 08:22:28 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.8</generator>
+	<item>
+		<title>作者：ibireme</title>
+		<link>https://blog.ibireme.com/about/#comment-14</link>
+		<dc:creator><![CDATA[ibireme]]></dc:creator>
+		<pubDate>Wed, 15 Jan 2014 02:18:00 +0000</pubDate>
+		<guid isPermaLink="false">http://biree.wordpress.com/?page_id=2#comment-14</guid>
+		<description><![CDATA[现在这个小站只存放私人的东西，暂时不会添加友链，实在对不起。。]]></description>
+		<content:encoded><![CDATA[<p>现在这个小站只存放私人的东西，暂时不会添加友链，实在对不起。。</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>作者：刘畅</title>
+		<link>https://blog.ibireme.com/about/#comment-13</link>
+		<dc:creator><![CDATA[刘畅]]></dc:creator>
+		<pubDate>Mon, 13 Jan 2014 09:07:11 +0000</pubDate>
+		<guid isPermaLink="false">http://biree.wordpress.com/?page_id=2#comment-13</guid>
+		<description><![CDATA[;-) 
+交换友情连接
+http://firefrog.sinaapp.com/ 
+名称 firefrog
+tag   ios 随笔
+3Q]]></description>
+		<content:encoded><![CDATA[<p>;-)<br />
+交换友情连接<br />
+<a href="http://firefrog.sinaapp.com/" rel="nofollow">http://firefrog.sinaapp.com/</a><br />
+名称 firefrog<br />
+tag   ios 随笔<br />
+3Q</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>作者：isaced</title>
+		<link>https://blog.ibireme.com/about/#comment-10</link>
+		<dc:creator><![CDATA[isaced]]></dc:creator>
+		<pubDate>Wed, 09 Oct 2013 05:21:30 +0000</pubDate>
+		<guid isPermaLink="false">http://biree.wordpress.com/?page_id=2#comment-10</guid>
+		<description><![CDATA[到此一游！]]></description>
+		<content:encoded><![CDATA[<p>到此一游！</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
