@@ -1033,7 +1033,7 @@ ul.et_pb_side_nav .side_nav_item a.active { background-color: #fff !important; }
 
 	/* Header Styles */
 	#main-header, #top-header { transition: none; -webkit-transition: none; -moz-transition: none; }
-	#top-menu { display: none; }
+	#top-menu { display: inline-block; }
 	.et_hide_nav.et_non_fixed_nav.et_transparent_nav #top-header, .et_hide_nav.et_non_fixed_nav.et_transparent_nav #main-header, .et_hide_nav.et_fixed_nav #top-header, .et_hide_nav.et_fixed_nav #main-header { transform: translateY(0px) !important; -webkit-transform: translateY(0px) !important; opacity: 1; }
 	.et_header_style_centered #main-header { padding: 20px 0; }
 	.et_header_style_centered nav#top-menu-nav { display: none; }
