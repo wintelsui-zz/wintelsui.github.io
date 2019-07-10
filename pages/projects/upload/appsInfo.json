@@ -22,5 +22,11 @@
     "ituns_url": "https://itunes.apple.com/us/app/五十音圖pro/id1372554304?l=zh&ls=1&mt=8",
     "icon": "https://wintelsui.github.io/pages/projects/upload/leanJapan50_120.png",
     "name": "五十音图 Pro"
+  },
+  {
+    "url": "https://supersmalltalk.github.io/project/drawBookHome",
+    "ituns_url": "https://itunes.apple.com/cn/app/画板和书/id1440705449?mt=8&uo=4",
+    "icon": "https://wintelsui.github.io/pages/projects/upload/drawbook.jpg",
+    "name": "画板和书"
   }
 ]

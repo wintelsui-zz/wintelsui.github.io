@@ -4,13 +4,13 @@
 <array>
 	<dict>
 		<key>icon</key>
-		<string>http://wintelsui.github.io/pages/projects/upload/kuaizanIcon.png</string>
+		<string>https://wintelsui.github.io/pages/projects/upload/kuaizanIcon.png</string>
 		<key>ituns_url</key>
 		<string>https://itunes.apple.com/us/app/快赞-notes/id1212355459?l=zh&amp;amp;ls=1&amp;amp;mt=8</string>
 		<key>name</key>
 		<string>快赞</string>
 		<key>url</key>
-		<string>http://wintelsui.github.io/pages/WTGLilysFriends</string>
+		<string>https://wintelsui.github.io/pages/WTGLilysFriends</string>
 	</dict>
 	<dict>
 		<key>icon</key>
@@ -41,6 +41,16 @@
 		<string>五十音图 Pro</string>
 		<key>url</key>
 		<string>https://wintelsui.github.io/pages/WTJapaneseLearn</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>https://wintelsui.github.io/pages/projects/upload/drawbook.jpg</string>
+		<key>ituns_url</key>
+		<string>https://itunes.apple.com/cn/app/画板和书/id1440705449?mt=8&amp;uo=4</string>
+		<key>name</key>
+		<string>画板和书</string>
+		<key>url</key>
+		<string>https://supersmalltalk.github.io/project/drawBookHome</string>
 	</dict>
 </array>
 </plist>
