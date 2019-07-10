@@ -1,31 +1,31 @@
 [
   {
     "url": "https://wintelsui.github.io/pages/WTGLilysFriends",
-    "ituns_url": "https://itunes.apple.com/us/app/快赞-notes/id1212355459?l=zh&amp;ls=1&amp;mt=8",
+    "ituns_url": "https://apps.apple.com/cn/app/快赞/id1212355459?l=zh&ls=1",
     "icon": "https://wintelsui.github.io/pages/projects/upload/kuaizanIcon.png",
     "name": "快赞"
   },
   {
     "url": "https://wintelsui.github.io/pages/WTLilysWMRemover",
-    "ituns_url": "https://itunes.apple.com/cn/app/快消水印/id1221819804?l=zh&amp;ls=1&amp;mt=8",
+    "ituns_url": "https://apps.apple.com/cn/app/快消水印/id1221819804?l=zh&ls=1",
     "icon": "https://wintelsui.github.io/pages/projects/upload/kuaixiaoshuiyinIcon.jpg",
     "name": "快消水印"
   },
   {
     "url": "https://wintelsui.github.io/pages/WTJapaneseLearn",
-    "ituns_url": "https://itunes.apple.com/us/app/五十音圖lite/id1436056556?l=zh&ls=1&mt=8",
+    "ituns_url": "https://apps.apple.com/cn/app/五十音圖lite/id1436056556?l=zh&ls=1",
     "icon": "https://wintelsui.github.io/pages/projects/upload/leanJapan50_120.png",
     "name": "五十音图 Lite"
   },
   {
     "url": "https://wintelsui.github.io/pages/WTJapaneseLearn",
-    "ituns_url": "https://itunes.apple.com/us/app/五十音圖pro/id1372554304?l=zh&ls=1&mt=8",
+    "ituns_url": "https://apps.apple.com/cn/app/五十音圖pro/id1372554304?l=zh&ls=1",
     "icon": "https://wintelsui.github.io/pages/projects/upload/leanJapan50_120.png",
     "name": "五十音图 Pro"
   },
   {
     "url": "https://supersmalltalk.github.io/project/drawBookHome",
-    "ituns_url": "https://itunes.apple.com/cn/app/画板和书/id1440705449?mt=8&uo=4",
+    "ituns_url": "https://apps.apple.com/cn/app/画板和书/id1440705449?l=zh&ls=1",
     "icon": "https://wintelsui.github.io/pages/projects/upload/drawbook.jpg",
     "name": "画板和书"
   }
