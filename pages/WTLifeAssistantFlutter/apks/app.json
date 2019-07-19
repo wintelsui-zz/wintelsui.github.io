@@ -1,8 +1,8 @@
 {
-    "version": "1.0.0.1",
+    "version": "1.0.0.2",
     "shortversion": "1.0.0",
     "homepage":"https://wintelsui.github.io/pages/WTLifeAssistantFlutter",
     "downloadurl":"https://wintelsui.github.io/pages/WTLifeAssistantFlutter/apks/last/lifeAssistant.apk",
-    "info":"",
+    "info":"不知道是什么垃圾？问问“垃圾分类助理”就对了！",
     "appname":"垃圾分类助理"
 }
