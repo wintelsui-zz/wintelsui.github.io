@@ -61,8 +61,9 @@ Released   : 20120617
 				<ul style="left:0px">
 					<div style="height: 245px; position: relative; left: 0px; top: 0px;">
 					    iOS 版本下载<br>
-					    ￼<img src="images/dimensionalbarcode2_300_300.png" alt="" width="150" height="150"><br>
-                        <a href="https://itunes.apple.com/cn/app/快赞-notes/id1212355459?l=zh&ls=1&mt=8">点击下载(Apple Store)</a>
+					    <img src="images/dimensionalbarcode2_300_300.png" alt="" width="150" height="150"><br>
+                        <a href="https://itunes.apple.com/cn/app/快赞-notes/id1212355459?l=zh&ls=1&mt=8">点击下载(Apple Store)</a><br>
+                        <button id="#openApp" data-v-0dad83c0="" style="color: rgb(247, 248, 251); background: rgb(115, 127, 196);">打开APP</button>
 ￼￼</div>
 				</ul><br></div>
 			<!-- end #sidebar -->
@@ -80,15 +81,13 @@ Released   : 20120617
 </div>
 <!-- end #footer -->
 <script type="text/javascript">
-        MobLink(
-                {
-                el: "#openAppBtn",
-                path: "demo/a",
-                params: {
-                    key1: "value_one",
-                }
-            }
-        );
-    </script>
+	MobLink([
+    {
+        el: "#openApp",
+        path: "launch",
+        params: {}
+    },
+    ]);
+</script>
 </body>
 </html>
