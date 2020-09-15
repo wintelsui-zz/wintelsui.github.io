@@ -4,7 +4,7 @@
         "details": [
             {
                 "appID": "ER82ALNC99.org.wintelsui.LilysFriends",
-                "paths": [ "/kuaizan/*"]
+                "paths": [ "/pages/WTGLilysFriends/*"]
             }
         ]
     }
