@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "ER82ALNC99.org.wintelsui.LilysFriends",
+                "paths": [ "/kuaizan/*"]
+            }
+        ]
+    }
+}
